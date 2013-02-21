@@ -1,0 +1,15 @@
+For i = 1 to n
+	if i = 0 then
+		return 0
+	else if i = 1 then
+		find sensor s can cover target(i)
+		M(1)=min{C(s(1))}
+		return M(1)
+	else if target(i) has been covered then
+		M(i) = M(i-1)
+		return M(i)
+	else 
+		M(i) = min{OPT(i-1)+min{C(s(i))}, OPT(i-2)+min{C(s(i) may cover s(i-1) and target(i))}}
+		return M(i)
+	Endif
+Endfor
